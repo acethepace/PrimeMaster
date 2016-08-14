@@ -1,2 +1,2 @@
 # PrimeMaster
-An Android Application which asks if a number is prime or not.
+An Android Application/Game which asks if a number is prime or not.
