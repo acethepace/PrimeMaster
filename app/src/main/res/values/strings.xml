@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PrimeMaster</string>
+    <string name="a_prime_number">A PRIME NUMBER?</string>
+    <string name="no_button">NO</string>
+    <string name="yes_button">YES</string>
+    <string name="skip_button">Skip</string>
+    <string name="is_text">IS</string>
+</resources>
