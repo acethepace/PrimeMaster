@@ -13,11 +13,10 @@
         android:id="@+id/tv_prime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
         android:text="@string/is_text"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 
     <Button
@@ -25,8 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
         android:background="@color/colorPrimary"
+        android:layout_alignParentEnd="true"
         android:onClick="loadNewNumber"
         android:text="@string/skip_button" />
 
@@ -41,23 +40,23 @@
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
-            android:background="@color/colorPrimary"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:drawableStart="@drawable/ic_yes"
             android:layout_weight="1"
             android:layout_margin="10dp"
-            android:drawableStart="@drawable/ic_yes"
             android:onClick="answerYes"
             android:text="@string/yes_button" />
 
         <Button
             android:id="@+id/button2"
-            android:drawableEnd="@drawable/ic_no"
             style="?android:attr/buttonStyleSmall"
-            android:background="@color/colorPrimary"
-            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:drawableEnd="@drawable/ic_no"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
             android:onClick="answerNo"
             android:text="@string/no_button" />
     </LinearLayout>
