@@ -5,4 +5,6 @@
     <string name="yes_button">YES</string>
     <string name="skip_button">Skip</string>
     <string name="is_text">IS</string>
+    <string name="score_string">Score: %d</string>
+    <string name="prime_number_text">%d</string>
 </resources>

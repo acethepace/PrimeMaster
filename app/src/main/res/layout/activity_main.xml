@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:background="@color/colorAccent"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.mallock.primemaster.MainActivity">
@@ -18,7 +18,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="@string/is_text"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white" />
 
 
     <Button
@@ -29,7 +30,8 @@
         android:layout_alignParentStart="true"
         android:background="@color/colorPrimary"
         android:onClick="loadNewNumber"
-        android:text="@string/skip_button" />
+        android:text="@string/skip_button"
+        android:textColor="@color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,27 +44,29 @@
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
-            android:background="@color/colorPrimary"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_margin="10dp"
-            android:padding="5dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
             android:drawableStart="@drawable/ic_yes"
             android:onClick="answerYes"
-            android:text="@string/yes_button" />
+            android:padding="5dp"
+            android:text="@string/yes_button"
+            android:textColor="@color/green" />
 
         <Button
             android:id="@+id/button2"
-            android:drawableEnd="@drawable/ic_no"
             style="?android:attr/buttonStyleSmall"
-            android:background="@color/colorPrimary"
-            android:layout_margin="10dp"
             android:layout_width="match_parent"
-            android:padding="5dp"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:drawableEnd="@drawable/ic_no"
             android:onClick="answerNo"
-            android:text="@string/no_button" />
+            android:padding="5dp"
+            android:text="@string/no_button"
+            android:textColor="@color/red" />
     </LinearLayout>
 
     <TextView
@@ -74,6 +78,7 @@
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white"
         android:textSize="40sp" />
 
     <TextView
@@ -83,16 +88,18 @@
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:text="@string/a_prime_number"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white" />
 
     <TextView
+        android:id="@+id/scoreText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/scoreText"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"/>
+        android:text="@string/score_string"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/white" />
 
 
 </RelativeLayout>

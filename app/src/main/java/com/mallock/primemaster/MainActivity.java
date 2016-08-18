@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             numberGenerator = (NumberGenerator) savedInstanceState.get(NUMBER_GENERATOR);
             score = savedInstanceState.getInt(SCORE);
-            primeNumberTV.setText(numberGenerator.getCurrentNumber() + "");
+            primeNumberTV.setText(String.format(getString(R.string.prime_number_text), numberGenerator.getCurrentNumber()));
         }
         updateScore();
     }
@@ -52,11 +52,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateScore() {
-        scoreTV.setText("SCORE: " + score);
+        scoreTV.setText(String.format(getString(R.string.score_string), score));
     }
 
     public void loadNewNumber(@Nullable View view) {
-        primeNumberTV.setText(numberGenerator.generateNew() + "");
+        primeNumberTV.setText(String.format(getString(R.string.prime_number_text), numberGenerator.generateNew()));
     }
 
     public void answerNo(View view) {
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             score += 10;
         }
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         loadNewNumber(null);
         updateScore();
     }
