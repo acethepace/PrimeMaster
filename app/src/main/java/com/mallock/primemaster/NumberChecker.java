@@ -5,7 +5,7 @@ package com.mallock.primemaster;
  */
 class NumberChecker {
     public static boolean isPrime(int number) {
-        for (int i = 2; i - 1 < number; i++) {
+        for (int i = 2; i < number; i++) {
             if (number % i == 0)
                 return false;
         }
@@ -13,7 +13,7 @@ class NumberChecker {
     }
 
     public static int getFirstFactor(int number) {
-        for (int i = 2; i - 1 < number; i++) {
+        for (int i = 2; i < number; i++) {
             if (number % i == 0)
                 return i;
         }
