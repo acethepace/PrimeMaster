@@ -11,9 +11,9 @@ public class HintActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hint);
-        TextView hintText = (TextView) findViewById(R.id.tv_hint);
+        TextView hintTV = (TextView) findViewById(R.id.tv_hint);
         String hint = getIntent().getStringExtra(MainActivity.EXTRA_HINT);
-        hintText.setText(hint);
+        hintTV.setText(hint);
     }
 
     public void backButtonAction(View view) {

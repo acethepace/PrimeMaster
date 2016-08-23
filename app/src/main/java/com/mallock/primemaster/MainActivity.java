@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     static final String EXTRA_HINT = "HINT";
+    static final String EXTRA_CHEAT = "CHEAT";
     private final static int MIN_VALUE = 1;
     private final static int MAX_VALUE = 1000;
     private static final String NUMBER_GENERATOR = "NUMBER_GENERATOR";
@@ -88,7 +89,10 @@ public class MainActivity extends AppCompatActivity {
             message = "Wrong answer :(";
             score -= 5;
         } else {
-            score += 10;
+            if (cheatUsed || hintUsed)
+                score += 5;
+            else
+                score += 10;
         }
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         loadNewNumber(null);
@@ -109,27 +113,56 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.hint:
                 new AlertDialog.Builder(this)
-                        .setTitle("Delete entry")
-                        .setMessage("Are you sure you want to delete this entry?")
+                        .setTitle("Hint")
+                        .setMessage("Are you sure you want to see the hint? You will only get one chance per question.")
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                // continue with delete
                                 showHint();
                             }
                         })
                         .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                // do nothing
                             }
                         })
-                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setIcon(android.R.drawable.ic_dialog_info)
                         .show();
                 return true;
             case R.id.cheat:
-                // TODO: 24-08-2016 add cheat code here
+                new AlertDialog.Builder(this)
+                        .setTitle("Cheat")
+                        .setMessage("Are you sure you want to cheat? You will only get one chance per question.")
+                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                showCheat();
+                            }
+                        })
+                        .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        })
+                        .setIcon(android.R.drawable.ic_dialog_info)
+                        .show();
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showCheat() {
+        if (hintUsed) {
+            Toast.makeText(this, "You have already used hint.", Toast.LENGTH_SHORT).show();
+        } else if (cheatUsed) {
+            Toast.makeText(this, "You have already used cheat.", Toast.LENGTH_SHORT).show();
+        } else {
+            cheatUsed = true;
+            Intent cheatActivityIntent = new Intent(this, CheatActivity.class);
+            String cheatText = getCheat(numberGenerator.getCurrentNumber());
+            cheatActivityIntent.putExtra(EXTRA_CHEAT, cheatText);
+            startActivity(cheatActivityIntent);
+        }
+    }
+
+    private String getCheat(int currentNumber) {
+        return NumberChecker.isPrime(currentNumber) ? "Answer is yes" : "Answer is no";
     }
 
     private void showHint() {
