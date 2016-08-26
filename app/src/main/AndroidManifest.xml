@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".HintActivity" />
-        <activity android:name=".CheatActivity"></activity>
+        <activity android:name=".CheatActivity"/>
     </application>
 
 </manifest>

@@ -7,7 +7,7 @@
     <string name="is_text">IS</string>
     <string name="score_string">Score: %d</string>
     <string name="prime_number_text">%d</string>
-    <string name="cheat">cheat</string>
-    <string name="hint">hint</string>
+    <string name="cheat">Cheat</string>
+    <string name="hint">Hint</string>
     <string name="back">back</string>
 </resources>

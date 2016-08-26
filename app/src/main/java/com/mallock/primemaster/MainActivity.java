@@ -57,21 +57,11 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
     }
 
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
     private void updateScore() {
         scoreTV.setText(String.format(getString(R.string.score_string), score));
     }
 
-    public void loadNewNumber(@Nullable View view) {
+    private void loadNewNumber(@Nullable View view) {
         primeNumberTV.setText(String.format(getString(R.string.prime_number_text), numberGenerator.generateNew()));
     }
 
@@ -114,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.hint:
                 new AlertDialog.Builder(this)
                         .setTitle("Hint")
-                        .setMessage("Are you sure you want to see the hint? You will only get one chance per question.")
+                        .setMessage("Are you sure you want to see the hint? You will only get one cheat/hint per question.")
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 showHint();
@@ -130,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.cheat:
                 new AlertDialog.Builder(this)
                         .setTitle("Cheat")
-                        .setMessage("Are you sure you want to cheat? You will only get one chance per question.")
+                        .setMessage("Are you sure you want to cheat? You will only get one cheat/hint per question.")
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 showCheat();
